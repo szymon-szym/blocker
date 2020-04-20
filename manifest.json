@@ -1,10 +1,19 @@
 {
-  "name": "ck-adblocker",
+  "name": "ad blocker",
   "version": "1.0",
-  "description": "A simple adblocker",
-  "permissions": ["webRequest", "webRequestBlocking", "http://*/", "https://*/"],
+  "description": "Kot blocker",
+  "permissions": ["webRequest", "webRequestBlocking", "http://*/", "https://*/", "storage" ],
   "background": {
-	"scripts": ["blocked_domains.js", "ckblock.js"]
+	"scripts": ["blocked_domains.js", "background.js"]
+  },
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "run_at": "document_end",
+    "js": ["content.js"]
+  }],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "persistent": true 
   },
   "manifest_version": 2
 }

@@ -1,6 +1,11 @@
-var blocked_domains = [
-    "*://*.lb.usemaxserver.de/*",
+// not in use for now
+
+const blocked_domains = [
     "*://*.tracking.klickthru.com/*",
     "*://*.zmedia.com/*",
     "*://*.doubleclick.net/*",
-    "*://*.zv1.november-lax.com/*"];
+    "*://*.zv1.november-lax.com/*",
+];
+
+const white_list = [
+]

@@ -1,7 +1,3 @@
-# DIY_Ad-Blocker
+# Kot blocker
 
-
-Very basic domain blacklisting chrome extension. Planning to add additional functionality in the future.
-
-Video Demo: 
-https://www.youtube.com/watch?v=7zi_dYKwIBY
+Podmienia iframe'y google_ads na koty

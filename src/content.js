@@ -1,12 +1,14 @@
 // iframes are being added dynamically,
 // so it does not make sense to replace them on document load
 
-// const googleAds = document.querySelectorAll("iframe[id*='google_ads']");
-// console.log(`adds found ${googleAds.length}`);
-// googleAds.forEach((x) => {
-//   console.log("replacing");
-//   x.replaceWith("kot");
-// });
+const googleAds = document.querySelectorAll("iframe[id*='google_ads']");
+console.log(`adds found ${googleAds.length}`);
+googleAds.forEach((x) => {
+  console.log("replacing");
+  const img = document.createElement("img");
+  img.src = `https://placekitten.com/g/${x.width}/${x.height}`;
+  x.replaceWith(img);
+});
 
 const iframesToReplace = ["google_ads_"];
 

@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/szymon-szym/blocker/issues"
   },
-  "homepage": "https://github.com/szymon-szym/blocker#readme"
+  "homepage": "https://github.com/szymon-szym/blocker#readme",
+  "dependencies": {
+    "parcel-plugin-static-files-copy": "^2.3.1"
+  }
 }

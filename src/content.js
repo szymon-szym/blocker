@@ -10,7 +10,18 @@ googleAds.forEach((x) => {
   x.replaceWith(img);
 });
 
-const iframesToReplace = ["google_ads_"];
+
+const otherAds = document.querySelectorAll("iframe[src*='ads']");
+console.log(`other adds found ${otherAds.length}`);
+otherAds.forEach((x) => {
+  console.log("replacing");
+  const img = document.createElement("img");
+  img.src = `https://placekitten.com/g/${x.width}/${x.height}`;
+  x.replaceWith(img);
+});
+
+const iframesIdsToReplace = ["google_ads_"];
+const iframesSrcToReplace = ["ads"];
 
 const observer = new MutationObserver(function(mutations) {
   mutations.forEach(function(mutation) {
@@ -21,15 +32,24 @@ const observer = new MutationObserver(function(mutations) {
       const node = mutation.addedNodes[i];
       //   console.log(`added node ${node.nodeName}`)
       if (node.nodeName === "IFRAME") {
-        iframesToReplace.forEach((x) => {
-          if (node.id.includes(x)) {
-            console.log(`iframe to replace ${node.id}`);
+        iframesIdsToReplace.forEach((x) => {
+            if (node.id.includes(x)) {
+            console.log(`iframe to replace by id ${node.id}`);
             const img = document.createElement("img");
             img.src = `https://placekitten.com/g/${node.width}/${node.height}`;
             node.replaceWith(img);
             return;
-          }
+            }
         });
+        iframesSrcToReplace.forEach((x) => {
+          if (node.src.includes(x)) {
+          console.log(`iframe to replace by src ${node.src}`);
+          const img = document.createElement("img");
+          img.src = `https://placekitten.com/g/${node.width}/${node.height}`;
+          node.replaceWith(img);
+          return;
+          }
+      });
       }
     }
   });

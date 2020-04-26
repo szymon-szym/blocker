@@ -4,7 +4,7 @@
 // in general we can't hijack all iframes, because it would block pages functionalities
 // but on some pages there are no usefull functionalities, so we can use all iframes there
 
-const fullBlockList = ["onet.pl", "wp.pl"];
+const fullBlockList = ["onet.pl", "wp.pl", "o2.pl"];
 
 // to be moved to the helper module
 const clearWP = () => {

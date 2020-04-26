@@ -39,11 +39,13 @@ const clearWP = () => {
 let isFullBlocked = false;
 fullBlockList.forEach((x) => {
   if (window.location.toString().includes(x)) {
+    console.log(`full block mode`)
     isFullBlocked = true;
   }
+
 });
 
-if (fullBlockList) {
+if (isFullBlocked) {
   const allIframes = document.querySelectorAll("iframe");
   console.log(`blocking all found iframes at start ${allIframes.length}`);
   allIframes.forEach((x) => {

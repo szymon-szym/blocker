@@ -1,3 +1,23 @@
+console.log(`[background] script is running`);
+
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    switch (request.message) {
+      case "stop":
+        console.log(`[background] stop`);
+        break;
+      case "good":
+        console.log(`[background] good`);
+        break;
+      case "money":
+        console.log(`[background] money`);
+        break;
+      default:
+        console.log(`[background] not button msg`);
+    }
+  });
+
+
 // background may be used to block all requests. For now plugin uses only content scripts
 
 // let currState;
